@@ -5,7 +5,7 @@
 [Link to Tampermonkey extension page](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo?hl=en)
 2. Navigate to the Tampermonkey dashboard
 3. In the top right, click the + button to create a new file
-4. Copy the contents of this file into your newly created file
+4. Copy the contents of index.js into your newly created file
 5. Save
 
 ## Portal Instructions
