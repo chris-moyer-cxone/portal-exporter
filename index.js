@@ -35,6 +35,7 @@
  const testSelector = 'table.sites-table tbody > tr';
  const resultsTableBodySelector = 'table.sites-table tbody';
  const loadingSpinnerSelector = 'div.spinner-container';
+ const descriptionRegex = /^[Ll]ive/;
  
  let siteDataSet = [];
  let offset = 0;
@@ -277,9 +278,8 @@
      csvOutput = csvOutput.slice(0, -1);
      csvOutput += '\n'
      console.log(csvOutput)
-     const re = /^[Oo]ther/;
      siteDataSet.forEach( row =>{
-         if( re.exec(row.description) ){
+         if( descriptionRegex.exec(row.description) ){
              csvOutput += row.toCSV() + '\n'
          };
      });
@@ -293,8 +293,9 @@
      await preparePage();
  
      // await waitForVisibleElement('a[href="/sites/create"]');
-     const btnParent = document.querySelector('a[href="/sites/create"]');
-     createButton(btnParent, 'Results to CSV', getAllResults)
+    const btnParent = document.querySelector('a[href="/sites/create"]');
+    
+    createButton(btnParent, 'Results to CSV', getAllResults)
  };
  
  window.addEventListener('load', main(), false)
